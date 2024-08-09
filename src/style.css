@@ -1,0 +1,37 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.image-wrapper {
+  position: relative;
+  width: fit-content;
+  border: 2px solid red
+}
+
+.pointer {
+  position: absolute;
+  width: 10px;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 255, 255, 0.385);
+  border-radius: 20px;
+}
+
+.tool-tip {
+  position: absolute;
+  cursor: pointer;
+  display: none;
+  min-width: 50px;
+  color: white;
+  font-size: small;
+  background-color: rgba(0, 0, 0, 0.582);
+  border-radius: 2px;
+  padding: 0 10px;
+}
+
+.pointer:hover {
+  background-color: rgba(255, 255, 255, 0.944);
+}
+
+.pointer:hover .tool-tip {
+  display: block;
+}
