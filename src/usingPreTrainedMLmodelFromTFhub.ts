@@ -25,8 +25,12 @@ const PARTS = [
   "right ankle",
 ];
 export default async function usingPreTrainedMLmodelFromTFhub() {
-  const model = await tf.loadGraphModel(MODEL_PATH, { fromTFHub: true });
-  model.save("localstorage://tf/movenet-model");
+  const connection = indexedDB.open("tf/movenet-model");
+  connection.transaction;
+  const cachedModel = await tf.loadGraphModel("indexeddb://tf/movenet-model");
+  const model =
+    cachedModel || (await tf.loadGraphModel(MODEL_PATH, { fromTFHub: true }));
+  !cachedModel && model.save("indexeddb://tf/movenet-model");
   const imageTensor = tf.browser.fromPixels(EXAMPLE_IMAGE);
   // from where to start cropping y,x axis and 0 represent red to keep all color values
   let cropStartingPoint = [15, 170, 0];
