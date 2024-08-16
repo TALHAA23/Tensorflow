@@ -4,9 +4,13 @@ import usingPreTrainedMLmodelFromTFhub from "./usingPreTrainedMLmodelFromTFhub";
 import traningNeuron from "./traningNeuron";
 import trainingMultipleNeurons from "./trainingMultipleNeurons";
 import multilayerPreceptrons from "./multilayerPerceptrons";
+import classificationProblem from "./classificationProblem";
+import usingMobileNetModel from "./mobileNet";
 
 // rawPreTrainModel();
 // usingPreTrainedMLmodelFromTFhub();
 // traningNeuron();
 // multilayerPreceptrons();
 // trainingMultipleNeurons();
+// classificationProblem();
+usingMobileNetModel();

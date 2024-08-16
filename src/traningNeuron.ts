@@ -15,6 +15,7 @@ export default async function traningNeuron() {
   tf.util.shuffleCombo(INPUTS, OUTPUTS);
   //   convert JS Array to tensor work with it effectively
   const INPUT_TENSOR = tf.tensor2d(INPUTS);
+  INPUT_TENSOR.print();
   const OUTPUT_TENSOR = tf.tensor1d(OUTPUTS);
   const FEATURE_RESULT = normalize(INPUTS);
   INPUT_TENSOR.dispose(); //not in use

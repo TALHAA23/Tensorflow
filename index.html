@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app"></div>
-    <!-- Raw Pre Trained Model Asset -->
+    <!--! Raw Pre Trained Model Asset -->
     <!-- <div class="image-wrapper">
       <img
         src="https://storage.googleapis.com/jmstore/TensorFlowJS/EdX/standing.jpg"
@@ -19,6 +19,40 @@
         height="360"
       />
     </div> -->
+
+    <!--! Image classification training -->
+    <!-- <h1>TensorFlowJS MNIST Classifier</h1>
+    <section class="box">
+      <h2>Input Image</h2>
+      <p>
+        Input Image is a 28x28 pixel grayscale image from MNIST dataset - a real
+        hand drawn digit!
+      </p>
+      <canvas id="canvas" width="28" height="28"></canvas>
+    </section>
+    <section class="box">
+      <h2>Prediction</h2>
+      <p>Below is the Prediction of above image by TensorFlowJS</p>
+      <p>Red is wrong prediction, Green is correct one</p>
+      <p id="prediction">Training model please wait...</p>
+    </section> -->
+
+    <!-- ! MobileNet lib -->
+    <h1>
+      Make your own "Teacheable machine" using trasfer learning with MobileNet
+      v3 in Tensorflow.JS using saved grapgh model from TFHUB
+    </h1>
+    <p id="status">Awaiting Tf.js load</p>
+    <video id="webcam" autoplay></video>
+    <button id="enableCam">Enable Webcam</button>
+    <button class="dataCollector" data-1hot="0" data-name="Class 1">
+      Gather class 1 data
+    </button>
+    <button class="dataCollector" data-1hot="1" data-name="Class 2">
+      Gather class 2 data
+    </button>
+    <button id="train">Train &amp; Predict!</button>
+    <button id="reset">Reset</button>
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
