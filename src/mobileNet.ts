@@ -71,13 +71,11 @@ async function trainAndPredict() {
   const outputAsTensor = tf.tensor1d(trainingDataOutputs, "int32");
   const oneHotOutputs = tf.oneHot(outputAsTensor, CLASS_NAMES.length);
   const inputAsTensor = tf.stack(trainingDataInputs);
-
   const result = await model?.fit(inputAsTensor, oneHotOutputs, {
     shuffle: true,
     batchSize: 5,
     epochs: 10,
   });
-  console.log(result?.history);
   outputAsTensor.dispose();
   oneHotOutputs.dispose();
   inputAsTensor.dispose();
@@ -145,6 +143,7 @@ function createModel() {
         : "categoricalCrossentropy",
     metrics: ["accuracy"],
   });
+  model.summary();
   return model;
 }
 export default async function usingMobileNetModel() {
